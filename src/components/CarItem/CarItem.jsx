@@ -1,3 +1,4 @@
+import { useNavigate } from "react-router-dom";
 import IconLine from "../IconLine/IconLine.jsx";
 import css from "./CarItem.module.css";
 
@@ -5,6 +6,10 @@ const formatMileage = (mileage) => {
   return new Intl.NumberFormat().format(mileage) + " km";
 };
 const CarItem = ({ car }) => {
+  const navigate = useNavigate();
+  const handleGoToDetails = () => {
+    navigate(`/catalog/${car.id}`);
+  };
   const address = car.address || "";
   const [, city, country] = address.split(",").map((part) => part.trim());
   const Separator = () => <IconLine />;
@@ -14,21 +19,26 @@ const CarItem = ({ car }) => {
     <div>
       <li className={css.carItem}>
         <img src={car.img} alt={car.brand} className={css.img} />
-        <div>
-          <h2>
-            {car.brand} <span>{car.model}</span>, {car.year}
+        <div className={css.name}>
+          <h2 className={css.title}>
+            {car.brand} <span className={css.partName}>{car.model}</span>,{" "}
+            {car.year}
           </h2>
           <p>${car.rentalPrice}</p>
         </div>
+        <div className={css.descWrapper}>
+          <p className={css.desc}>
+            {city} <Separator />
+            {country} <Separator /> {car.rentalCompany} <Separator />
+          </p>
+          <p className={css.desc}>
+            {car.type} <Separator /> {mileage}
+          </p>
+        </div>
 
-        <p className={css.descWrapper}>
-          {city} <Separator />
-          {country} <Separator /> {car.rentalCompany} <Separator />
-        </p>
-        <p className={css.descWrapper}>
-          {car.type} <Separator /> {mileage}
-        </p>
-        <button type="button">Read more</button>
+        <button type="button" className={css.btn} onClick={handleGoToDetails}>
+          Read more
+        </button>
       </li>
     </div>
   );

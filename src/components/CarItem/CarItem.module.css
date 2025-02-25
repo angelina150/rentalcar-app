@@ -1,19 +1,56 @@
 .carItem {
   max-width: 276px;
-  max-height: 352px;
+  max-height: 424px;
+}
+.name {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-bottom: 8px;
+}
+.title {
+  font-family: Manrope;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 20px;
+}
+.partName {
+  color: #3470ff;
 }
 .img {
   width: 276px;
   height: 268px;
   border-radius: 14px;
   object-fit: cover;
+  margin-bottom: 16px;
 }
 .descWrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  margin-bottom: 28px;
+}
+.desc {
   display: flex;
   flex-direction: row;
   gap: 6px;
   color: #8d929a;
-  font-family: Manrope;
   font-size: 12px;
   line-height: 16px;
+}
+.btn {
+  font-family: Manrope;
+  width: 276px;
+  height: 44px;
+  border-radius: 12px;
+  padding: 12px 97px;
+  background: #3470ff;
+  border: none;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 20px;
+  color: #ffffff;
+}
+.btn:hover {
+  background-color: #0b44cd;
 }

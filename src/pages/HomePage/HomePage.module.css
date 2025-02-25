@@ -1,6 +1,57 @@
 .title {
-  color: #37618e;
-  max-width: 400px;
+  color: #ffffff;
   margin: 0 auto;
-  margin-top: 50px;
+  margin-bottom: 16px;
+  font-family: Manrope;
+  font-weight: 700;
+  font-size: 60px;
+  line-height: 72px;
+  text-align: center;
+}
+.desc {
+  margin-bottom: 40px;
+  font-family: Manrope;
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 32px;
+  letter-spacing: 0%;
+  text-align: center;
+  color: #ffffff;
+}
+.btn {
+  width: 276;
+  height: 44;
+  border-radius: 12px;
+  padding: 12px 88px;
+  color: #ffffff;
+  background-color: #3470ff;
+  border: none;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 20px;
+  margin: 0 auto;
+  display: block;
+  font-family: Manrope;
+}
+.btn:hover {
+  background-color: #0b44cd;
+}
+.heroSection {
+  background-color: #2e2f42;
+  background-image: url("images/hero/hero.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  max-width: 1440px;
+  max-height: 700px;
+  margin-right: auto;
+  margin-left: auto;
+  padding: 436px 0 60px;
+}
+@media (min-device-pixel-ratio: 1.5),
+  (min-resolution: 144dpi),
+  (min-resolution: 1.5dppx) {
+  .heroSection {
+    background-image: url("images/hero/hero@2x.jpg");
+  }
 }

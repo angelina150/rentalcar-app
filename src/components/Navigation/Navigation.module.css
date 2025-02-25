@@ -1,10 +1,39 @@
 .navWrapper {
   display: flex;
   flex-direction: row;
-  gap: 40px;
-  font-weight: 600;
+  justify-content: space-between;
+  padding-right: 120px;
+  padding-left: 120px;
+  font-family: Manrope;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 20px;
+  text-align: center;
+  background-color: #f2f4f7;
 }
-.link:hover,
-link:active {
-  color: #0057b3;
+
+.navRightWrapper {
+  display: flex;
+  gap: 32px;
+  padding-top: 24px;
+  padding-bottom: 24px;
+}
+
+.logoLink {
+  padding-top: 26px;
+  padding-bottom: 26px;
+}
+
+nav a {
+  text-decoration: none;
+  color: #101828;
+  transition: color 0.3s ease;
+}
+
+nav a:hover {
+  color: #0b44cd;
+}
+
+nav a.active {
+  color: #0b44cd;
 }

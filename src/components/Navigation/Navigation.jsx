@@ -1,20 +1,29 @@
 import { NavLink } from "react-router-dom";
 import css from "./Navigation.module.css";
+import Logo from "../Logo/Logo.jsx";
 
 export const Navigation = () => {
   return (
-    <nav className={css.navWrapper}>
-      <div className={css.logoWrapper}>
-        <NavLink to="/" className={css.logo}>
-          Rental<span>Car</span>
+    <div>
+      <nav className={css.navWrapper}>
+        <NavLink className={css.logoLink} to="/">
+          <Logo />
         </NavLink>
-      </div>
-      <NavLink className={css.link} to="/">
-        Home
-      </NavLink>
-      <NavLink className={css.link} to="/catalog">
-        Catalog
-      </NavLink>
-    </nav>
+        <div className={css.navRightWrapper}>
+          <NavLink
+            className={({ isActive }) => (isActive ? css.active : "")}
+            to="/"
+          >
+            Home
+          </NavLink>
+          <NavLink
+            className={({ isActive }) => (isActive ? css.active : "")}
+            to="/catalog"
+          >
+            Catalog
+          </NavLink>
+        </div>
+      </nav>
+    </div>
   );
 };
