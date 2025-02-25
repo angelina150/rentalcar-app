@@ -1,0 +1,10 @@
+.navWrapper {
+  display: flex;
+  flex-direction: row;
+  gap: 40px;
+  font-weight: 600;
+}
+.link:hover,
+link:active {
+  color: #0057b3;
+}

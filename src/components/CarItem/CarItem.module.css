@@ -1,0 +1,19 @@
+.carItem {
+  max-width: 276px;
+  max-height: 352px;
+}
+.img {
+  width: 276px;
+  height: 268px;
+  border-radius: 14px;
+  object-fit: cover;
+}
+.descWrapper {
+  display: flex;
+  flex-direction: row;
+  gap: 6px;
+  color: #8d929a;
+  font-family: Manrope;
+  font-size: 12px;
+  line-height: 16px;
+}
