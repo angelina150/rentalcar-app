@@ -1,10 +1,10 @@
 .navWrapper {
+  max-height: 68px;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   padding-right: 120px;
   padding-left: 120px;
-  font-family: Manrope;
   font-weight: 500;
   font-size: 16px;
   line-height: 20px;

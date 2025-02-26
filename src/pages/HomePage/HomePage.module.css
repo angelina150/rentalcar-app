@@ -2,7 +2,6 @@
   color: #ffffff;
   margin: 0 auto;
   margin-bottom: 16px;
-  font-family: Manrope;
   font-weight: 700;
   font-size: 60px;
   line-height: 72px;
@@ -10,7 +9,6 @@
 }
 .desc {
   margin-bottom: 40px;
-  font-family: Manrope;
   font-weight: 600;
   font-size: 24px;
   line-height: 32px;
@@ -31,14 +29,13 @@
   line-height: 20px;
   margin: 0 auto;
   display: block;
-  font-family: Manrope;
 }
 .btn:hover {
   background-color: #0b44cd;
 }
 .heroSection {
   background-color: #2e2f42;
-  background-image: url("images/hero/hero.jpg");
+  background-image: url("/images/hero/hero.jpg");
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
@@ -52,6 +49,6 @@
   (min-resolution: 144dpi),
   (min-resolution: 1.5dppx) {
   .heroSection {
-    background-image: url("images/hero/hero@2x.jpg");
+    background-image: url("/images/hero/hero@2x.jpg");
   }
 }

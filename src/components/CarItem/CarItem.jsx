@@ -15,6 +15,7 @@ const CarItem = ({ car }) => {
   const Separator = () => <IconLine />;
 
   const mileage = formatMileage(car.mileage);
+
   return (
     <div>
       <li className={css.carItem}>
