@@ -1,4 +1,3 @@
-import { Form } from "react-router-dom";
 import css from "./CarDetails.module.css";
 import { useDispatch, useSelector } from "react-redux";
 import { useEffect } from "react";
@@ -7,6 +6,7 @@ import { selectCarById } from "../../redux/cars/selector.js";
 // import IconCheckCircle from "../IconCheckCircle/IconCheckCircle.jsx";
 import AccessoriesAndFuncsList from "../AccessoriesAndFuncsList/AccessoriesAndFuncsList.jsx";
 import RentalConditions from "../RentalConditions/RentalConditions.jsx";
+import FormOrder from "../FormOrder/FormOrder.jsx";
 const CarDetails = ({ id }) => {
   const dispatch = useDispatch();
   const car = useSelector(selectCarById);
@@ -28,20 +28,20 @@ const CarDetails = ({ id }) => {
   };
   const mileage = formatMileage(car.mileage);
 
-  // const url = car.img;
-  // const parts = url?.split("/");
-  // const number = parts[parts?.length - 1].split("-")[0];
-
-  // console.log(number); // "9582"
+  const numberId = car?.img?.split("/").pop()?.split("-")[0] || "";
 
   return (
     <div className={css.wrapper}>
       <div>
         <div>
-          <h2 className={css.title}>
-            {car.brand}
-            {car.model}, {car.year}
-          </h2>
+          <div className={css.wrapperTitle}>
+            <h2 className={css.title}>
+              {car.brand}
+              {car.model}, {car.year}
+            </h2>
+            <span className={css.numberId}>Id: {numberId}</span>
+          </div>
+
           <div className={css.wrapperDesc}>
             <div className={css.wrapperLocation}>
               <svg className={css.iconLocation} width="16" height="16">
@@ -99,7 +99,7 @@ const CarDetails = ({ id }) => {
       </div>
       <div>
         <img src={car.img} alt={car.brand} className={css.img} />
-        {/* <Form></Form> */}
+        <FormOrder />
       </div>
     </div>
   );

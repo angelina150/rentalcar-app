@@ -25,18 +25,14 @@
 }
 .descWrapper {
   display: flex;
-  flex-direction: column;
-  gap: 4px;
-  margin-bottom: 28px;
-}
-.desc {
-  display: flex;
   flex-direction: row;
+  margin-bottom: 4px;
   gap: 6px;
   color: #8d929a;
   font-size: 12px;
   line-height: 16px;
 }
+
 .btn {
   width: 276px;
   height: 44px;

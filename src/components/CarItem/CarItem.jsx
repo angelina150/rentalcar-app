@@ -12,8 +12,6 @@ const CarItem = ({ car }) => {
   };
   const address = car.address || "";
   const [, city, country] = address.split(",").map((part) => part.trim());
-  const Separator = () => <IconLine />;
-
   const mileage = formatMileage(car.mileage);
 
   return (
@@ -27,14 +25,17 @@ const CarItem = ({ car }) => {
           </h2>
           <p>${car.rentalPrice}</p>
         </div>
-        <div className={css.descWrapper}>
-          <p className={css.desc}>
-            {city} <Separator />
-            {country} <Separator /> {car.rentalCompany} <Separator />
-          </p>
-          <p className={css.desc}>
-            {car.type} <Separator /> {mileage}
-          </p>
+        <div>
+          <div className={css.descWrapper}>
+            <p className={css.desc}>{city}</p> <IconLine />
+            <p className={css.desc}>{country}</p> <IconLine />
+            <p className={css.desc}>{car.rentalCompany}</p>
+            <IconLine />
+          </div>
+          <div className={css.descWrapper}>
+            <p className={css.desc}>{car.type}</p> <IconLine />
+            <p className={css.desc}>{mileage}</p>
+          </div>
         </div>
 
         <button type="button" className={css.btn} onClick={handleGoToDetails}>
@@ -44,4 +45,5 @@ const CarItem = ({ car }) => {
     </div>
   );
 };
+
 export default CarItem;
