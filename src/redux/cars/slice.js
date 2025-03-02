@@ -47,13 +47,18 @@ const carsSlice = createSlice({
         const { cars, totalPages, page } = action.payload;
         state.loading = false;
         state.error = null;
+        if (!Array.isArray(state.items)) {
+          state.items = [];
+        }
         const existingCars = state.items.map((car) => car.id);
         const newCars = cars.filter((car) => !existingCars.includes(car.id));
+
         if (page === 1) {
           state.items = newCars;
         } else {
           state.items = [...state.items, ...newCars];
         }
+
         state.totalPages = totalPages;
         state.page = parseInt(page, 10);
       })
