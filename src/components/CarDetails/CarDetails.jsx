@@ -6,6 +6,7 @@ import { selectCarById } from "../../redux/cars/selector.js";
 import AccessoriesAndFuncsList from "../AccessoriesAndFuncsList/AccessoriesAndFuncsList.jsx";
 import RentalConditions from "../RentalConditions/RentalConditions.jsx";
 import FormOrder from "../FormOrder/FormOrder.jsx";
+import toast from "react-hot-toast";
 const CarDetails = ({ id }) => {
   const [isIdVisible, setIsIdVisible] = useState(false);
   const dispatch = useDispatch();
@@ -16,7 +17,7 @@ const CarDetails = ({ id }) => {
       try {
         await dispatch(fetchCarById(id));
       } catch (error) {
-        console.error("Error fetching car data:", error);
+        toast.error("Error fetching car data:", error);
       }
     };
     fetchData();
