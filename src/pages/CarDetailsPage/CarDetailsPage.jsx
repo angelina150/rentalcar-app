@@ -4,7 +4,7 @@ import CarDetails from "../../components/CarDetails/CarDetails.jsx";
 const CarDetailsPage = () => {
   const { id } = useParams();
   return (
-    <div>
+    <div className="container">
       <CarDetails id={id} />
     </div>
   );

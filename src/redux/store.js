@@ -15,7 +15,7 @@ import { carsReducer } from "./cars/slice.js";
 const carsConfig = {
   key: "carsKey",
   storage,
-  whitelist: ["cars"],
+  whitelist: ["cars", "favorites"],
 };
 
 export const store = configureStore({

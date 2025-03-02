@@ -1,6 +1,7 @@
 .carItem {
   max-width: 276px;
-  max-height: 424px;
+  height: 424px;
+  position: relative;
 }
 .name {
   display: flex;
@@ -26,13 +27,20 @@
 .descWrapper {
   display: flex;
   flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: flex-start;
   margin-bottom: 4px;
-  gap: 6px;
+  row-gap: 4px;
+  column-gap: 6px;
   color: #8d929a;
   font-size: 12px;
   line-height: 16px;
 }
-
+.desc {
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 16px;
+}
 .btn {
   width: 276px;
   height: 44px;
@@ -44,7 +52,24 @@
   font-size: 16px;
   line-height: 20px;
   color: #ffffff;
+  margin-top: 28px;
+  position: absolute;
+  bottom: 0;
 }
 .btn:hover {
   background-color: #0b44cd;
+}
+.icon {
+  fill: #f2f4f7;
+}
+
+.btnFavorite {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  border: none;
+  background: none;
+  cursor: pointer;
+  display: inline;
+  padding: 0;
 }

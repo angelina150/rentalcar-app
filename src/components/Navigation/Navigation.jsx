@@ -13,12 +13,14 @@ export const Navigation = () => {
           <NavLink
             className={({ isActive }) => (isActive ? css.active : "")}
             to="/"
+            end
           >
             Home
           </NavLink>
           <NavLink
             className={({ isActive }) => (isActive ? css.active : "")}
             to="/catalog"
+            end
           >
             Catalog
           </NavLink>

@@ -3,6 +3,7 @@ import DatePicker from "react-datepicker";
 import toast from "react-hot-toast";
 import * as Yup from "yup";
 import css from "./FormOrder.module.css";
+import "react-datepicker/dist/react-datepicker.css";
 const validationSchema = Yup.object({
   name: Yup.string().required("Name is required"),
   email: Yup.string()
@@ -14,7 +15,6 @@ const validationSchema = Yup.object({
 
 const FormOrder = () => {
   const handleSubmit = (values, actions) => {
-    console.log("values", values);
     actions.resetForm();
     toast.success("Form submitted successfully!");
   };
@@ -61,12 +61,14 @@ const FormOrder = () => {
 
             <label className={css.label}>
               <DatePicker
-                className={css.input}
+                popperClassName={css.customDatepicker}
                 selected={values.bookingDate}
                 onChange={(date) => setFieldValue("bookingDate", date)}
                 dateFormat="dd/MM/yyyy"
                 minDate={new Date()}
                 placeholderText="Booking date"
+                customInput={<Field className={css.input} name="bookingDate" />}
+                formatWeekDay={(day) => day.substring(0, 3).toUpperCase()}
               />
               <ErrorMessage
                 className={css.error}

@@ -3,6 +3,8 @@ import { Toaster } from "react-hot-toast";
 import { Routes, Route } from "react-router-dom";
 import { Layout } from "./components/Layout/Layout.jsx";
 import { lazy } from "react";
+import { useSelector } from "react-redux";
+import Loader from "./components/Loder/Loader.jsx";
 
 const HomePage = lazy(() => import("./pages/HomePage/HomePage.jsx"));
 const CatalogPage = lazy(() => import("./pages/CatalogPage/CatalogPage.jsx"));
@@ -11,9 +13,12 @@ const CarDetailsPage = lazy(() =>
 );
 
 function App() {
+  const loading = useSelector((state) => state.cars.loading);
   return (
     <div>
+      {loading && <Loader />}
       <Toaster />
+
       <Layout>
         <Routes>
           <Route path="/" element={<HomePage />} />

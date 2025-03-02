@@ -3,7 +3,6 @@ import { useDispatch, useSelector } from "react-redux";
 import { useEffect } from "react";
 import { fetchCarById } from "../../redux/cars/operations.js";
 import { selectCarById } from "../../redux/cars/selector.js";
-// import IconCheckCircle from "../IconCheckCircle/IconCheckCircle.jsx";
 import AccessoriesAndFuncsList from "../AccessoriesAndFuncsList/AccessoriesAndFuncsList.jsx";
 import RentalConditions from "../RentalConditions/RentalConditions.jsx";
 import FormOrder from "../FormOrder/FormOrder.jsx";

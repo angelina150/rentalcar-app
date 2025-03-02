@@ -1,0 +1,53 @@
+.title {
+  font-family: Manrope;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 16px;
+  color: #8d929a;
+}
+.inputMin {
+  margin-top: 8px;
+  background-color: #f7f7f7;
+  width: 160px;
+  height: 44px;
+  border-top-left-radius: 12px;
+  border-bottom-left-radius: 12px;
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+  padding-top: 12px;
+  padding-right: 16px;
+  padding-bottom: 12px;
+  padding-left: 16px;
+  font-family: Manrope;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 20px;
+  outline: none;
+  border: none;
+  border-right: 1px solid #dadde1;
+}
+.inputMax {
+  margin-top: 8px;
+  background-color: #f7f7f7;
+  width: 160px;
+  height: 44px;
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+  border-top-right-radius: 12px;
+  border-bottom-right-radius: 12px;
+  padding-top: 12px;
+  padding-right: 16px;
+  padding-bottom: 12px;
+  padding-left: 16px;
+  font-family: Manrope;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 20px;
+  outline: none;
+  border: none;
+  border-left: 1px solid #dadde1;
+}
+.inputMax::placeholder,
+.inputMin::placeholder {
+  color: #101828;
+}
