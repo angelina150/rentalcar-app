@@ -28,6 +28,18 @@ const SelectBrand = ({ setLocalFilters }) => {
   const handleDropdownToggle = () => {
     setIsOpen((prev) => !prev);
   };
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
+        setIsOpen(false);
+      }
+    };
+
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, []);
 
   return (
     <div className={css.container} ref={dropdownRef}>
