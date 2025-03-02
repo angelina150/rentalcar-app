@@ -1,5 +1,6 @@
 import axios from "axios";
 import { createAsyncThunk } from "@reduxjs/toolkit";
+import toast from "react-hot-toast";
 
 axios.defaults.baseURL = "https://car-rental-api.goit.global";
 
@@ -19,6 +20,7 @@ export const fetchCars = createAsyncThunk(
       const { data } = await axios.get("/cars", { params });
       return data;
     } catch (error) {
+      toast.error(error.message);
       return thunkAPI.rejectWithValue(error.message);
     }
   }
@@ -30,6 +32,7 @@ export const fetchCarById = createAsyncThunk(
       const { data } = await axios.get(`/cars/${id}`);
       return data;
     } catch (error) {
+      toast.error(error.message);
       return thunkAPI.rejectWithValue(error.message);
     }
   }
@@ -42,6 +45,7 @@ export const fetchBrands = createAsyncThunk(
       const { data } = await axios.get("/brands");
       return data;
     } catch (error) {
+      toast.error(error.message);
       return thunkAPI.rejectWithValue(error.message);
     }
   }

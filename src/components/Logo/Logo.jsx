@@ -1,9 +1,6 @@
 const Logo = () => {
   return (
     <div>
-      {/* <svg width="104" height="16">
-        <use href="/images/logo.svg"></use>
-      </svg> */}
       <svg
         width="104"
         height="16"

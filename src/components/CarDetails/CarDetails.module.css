@@ -80,3 +80,18 @@
   text-align: center;
   align-items: center;
 }
+.toggleButton {
+  background: none;
+  border: none;
+  cursor: pointer;
+  text-decoration: none;
+  padding: 0;
+  color: #8d929a;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 20px;
+}
+
+.toggleButton:hover {
+  text-decoration: none;
+}

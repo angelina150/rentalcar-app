@@ -1,14 +1,16 @@
 import css from "./CarDetails.module.css";
 import { useDispatch, useSelector } from "react-redux";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { fetchCarById } from "../../redux/cars/operations.js";
 import { selectCarById } from "../../redux/cars/selector.js";
 import AccessoriesAndFuncsList from "../AccessoriesAndFuncsList/AccessoriesAndFuncsList.jsx";
 import RentalConditions from "../RentalConditions/RentalConditions.jsx";
 import FormOrder from "../FormOrder/FormOrder.jsx";
 const CarDetails = ({ id }) => {
+  const [isIdVisible, setIsIdVisible] = useState(false);
   const dispatch = useDispatch();
   const car = useSelector(selectCarById);
+
   useEffect(() => {
     const fetchData = async () => {
       try {
@@ -27,8 +29,11 @@ const CarDetails = ({ id }) => {
   };
   const mileage = formatMileage(car.mileage);
 
-  const numberId = car?.img?.split("/").pop()?.split("-")[0] || "";
-
+  const numberId = car?.id;
+  const visibleId = numberId?.toString().slice(0, 4);
+  const toggleIdVisibility = () => {
+    setIsIdVisible((prevState) => !prevState);
+  };
   return (
     <div className={css.wrapper}>
       <div>
@@ -38,7 +43,17 @@ const CarDetails = ({ id }) => {
               {car.brand}
               {car.model}, {car.year}
             </h2>
-            <span className={css.numberId}>Id: {numberId}</span>
+            <span className={css.numberId}>
+              Id: {isIdVisible ? numberId : visibleId}
+              {!isIdVisible && (
+                <button
+                  onClick={toggleIdVisibility}
+                  className={css.toggleButton}
+                >
+                  ...
+                </button>
+              )}
+            </span>
           </div>
 
           <div className={css.wrapperDesc}>
